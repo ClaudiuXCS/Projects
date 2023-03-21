@@ -1,0 +1,2 @@
+#My Clothes App
+Proiect de gestionare a hainelor personale. Se adauga hainele personale in functie de categorie, se pot crea outfit-uri in functie de preferinte si se pot genera outfit-uri in functie de temperatura de afara.

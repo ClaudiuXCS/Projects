@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.home,
+.reports2 {
+  display: flex;
+  height: 850px;
+  font-size: 3rem;
+  float:right;
+  width: 86.6%;
+  word-break: break-all;
+  overflow: hidden;
+  
+}
+
+.drop-down {
+  margin-left: 305px;
+}
+
+.drop-down3 {
+  margin-left: 605px;
+  list-style: none;
+    display: flex;
+}
+
+.drop-down3 {
+  margin-left: 805px;
+  list-style: none;
+    position:fixed;
+}
+
+.button-Position {
+  margin-left:200px;
+  margin-top:150px;
+}

@@ -1,0 +1,42 @@
+{
+  "drinks": [
+    {
+      "id": "d001",
+      "name": "Coca-Cola",
+      "icon": "coca-cola",
+      "price": 15,
+      "promo": "promotion",
+      "description": "For coca-cola fans."
+    },
+    {
+      "id": "d002",
+      "name": "Fanta",
+      "icon": "fanta",
+      "price": 7,
+      "description": "For fanta fanatics."
+    },
+    {
+      "id": "d003",
+      "name": "Giusto",
+      "icon": "giusto",
+      "price": 6,
+      "promo": "new",
+      "description": "For the people who doesnt like acid."
+    },
+    {
+      "id": "d004",
+      "name": "Sprite",
+      "icon": "sprite",
+      "price": 8,
+      "description": "I give you a sprite, you give me your money."
+    },
+    {
+      "id": "d005",
+      "name": "Adria",
+      "icon": "adria",
+      "price": 4,
+      "promo": "promotion",
+      "description": "The cheap version of fanta."
+    }
+  ]
+}

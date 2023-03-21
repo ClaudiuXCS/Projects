@@ -1,0 +1,15 @@
+   
+   <a class="drink-card" [routerLink]="item.id" [ngClass]="{'drink-card-promo': item.promo}">
+   <img src="/assets/img/{{item.icon}}.png" [alt]="item.name" class="drink-card-icon"
+    />
+<div>
+    <p class="drink-card-name">{{item.name}}
+        <ng-container [ngSwitch]="item.promo">
+            <span *ngSwitchCase="'new'" class="drink-card-label">NEW</span>
+            <span *ngSwitchCase="'promotion'" class="drink-card-label">PROMOTION</span>
+        </ng-container>
+    </p>
+    <p class="drink-card-price">{{item.price | currency: 'RON': 'symbol'}}
+    </p>
+</div>
+</a>

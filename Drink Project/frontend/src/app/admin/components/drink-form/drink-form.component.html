@@ -1,0 +1,64 @@
+<form class="drink-form" #form="ngForm" *ngIf="item; else loading">
+    <label>
+        <span>Name</span>
+        <input type="text" name="name" class="input" required minlength="5" [ngModel]="item.name" #name="ngModel" />
+            <ng-container *ngIf="name.invalid && name.touched">
+                <div class="drink-form-error" *ngIf="name.errors?.['minlength']">Minimum length is 5!</div>
+                <div class="drink-form-error" *ngIf="name.errors?.['required']">Name is required!</div>
+            </ng-container>
+    </label>
+
+    <label>
+        <span>Icon</span>
+        <select name="icon" class="input input--select" required [ngModel]="item.icon" #icon="ngModel">
+            <option *ngFor="let icon of icons" [ngValue]="icon">{{icon}}</option>
+        </select>
+        <ng-container *ngIf="icon.invalid && icon.touched">
+            <div class="drink-form-error" *ngIf="icon.errors?.['required']">Icon is required!</div>
+        </ng-container>
+    </label>
+    <label>
+        <span>Price</span>
+        <input type="number" name="price" class="input" required [ngModel]="item.price" #price="ngModel"/>
+    <ng-container *ngIf="price.invalid && price.touched">
+        <div class="drink-form-error" *ngIf="price.errors?.['required']">Price is required!</div>
+    </ng-container>
+    </label>
+
+    <div class="drink-form-radios">
+        <p class="drink-form-radios-label">Promo:</p>
+        <label>
+            <input type="radio" name="promo" [value]="undefined" [ngModel]="item.promo" />
+            <span>None</span>
+        </label>
+
+        <label>
+            <input type="radio" name="promo" value="new" [ngModel]="item.promo"/>
+            <span>New</span>
+        </label>
+
+        <label>
+            <input type="radio" name="promo" value="promotion" [ngModel]="item.promo" />
+            <span>Promotion</span>
+        </label>
+    </div>
+
+    <label>
+        <span>Description</span>
+        <textarea name="description" class="input input--textarea" required [ngModel]="item.description" #description="ngModel"></textarea>
+        <ng-container *ngIf="description.invalid && description.touched">
+            <div class="drink-form-error" *ngIf="description.errors?.['required']">Description is required!</div>
+        </ng-container>
+    </label>
+
+    <button type="submit" class="btn btn--green" 
+    *ngIf="!isEdit" (click)="handleCreate(form)">Create</button>
+    <button type="submit" class="btn btn--green" *ngIf="isEdit" [disabled]="form.untouched" (click)="handleUpdate(form)">Update</button>
+    <button type="submit" class="btn btn--grey" *ngIf="isEdit" (click)="handleDelete()">Delete</button>
+    <button type="button" class="btn btn--grey"  *ngIf="form.touched || isEdit" (click)="form.resetForm()">Reset Form</button>
+    <div *ngIf="form.valid && form.submitted" class="drink-form-working">Working...</div>
+   <!-- <pre>{{ form.value | json}}</pre>
+    <pre>{{ item | json}}</pre>-->
+</form>
+
+<ng-template #loading>Loading...</ng-template>

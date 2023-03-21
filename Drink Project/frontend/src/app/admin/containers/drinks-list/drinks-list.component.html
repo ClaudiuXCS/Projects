@@ -1,0 +1,14 @@
+<div>
+    <div class="drink-list-actions">
+    <a routerLink="new" class="btn btn--green">New Drink 
+        <img style="width:17px;height:17px; margin-left:7px;" src="/assets/img/icon/plus.png" />
+    </a>
+    </div>
+    <ng-container *ngIf="drinks?.length else nothing">
+    <app-drink-card  *ngFor="let drink of drinks;" [item]="drink"></app-drink-card>
+    </ng-container>
+
+    <ng-template #nothing>
+        <p>No drinks available for moment...</p>
+    </ng-template>
+</div>

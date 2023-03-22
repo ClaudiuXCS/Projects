@@ -1,0 +1,18 @@
+   
+<a class="card">
+   <div *ngIf="!editOn else showEdit">
+    <p class="card-id">{{nr + 1}}
+    </p>
+      <p class="card-description">{{item.description}}
+      </p>
+      <button type="button" class="btn btn--green" (click)="showInput()">EDIT</button> 
+      <button *ngIf="!editOn" type="button" class="btn btn--red" (click)="deleteItem()">X</button>
+   </div>
+ </a>
+
+ <ng-template #showEdit>
+    <a class="card">
+    <input type="text" [(ngModel)]="newValue">
+    <button type="button" class="btn btn--green" (click)="editItem()">UPDATE</button> 
+    </a>
+</ng-template>

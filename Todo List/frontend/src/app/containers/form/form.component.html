@@ -1,0 +1,11 @@
+<div>
+    <input class="input" placeholder="add a new task..." name="task" type="text" [(ngModel)]="taskValue">
+    <button [disabled]="taskValue === ''" (click)="createTask()" class="btn btn--blue">Create</button>
+    <ng-container *ngIf="todos?.length else nothing">
+    <app-card *ngFor="let todo of todos; let i = index" [item]="todo" [nr]="i" (editEvent)="editTask($event)" (deleteEvent)="deleteTask($event)"></app-card>
+    </ng-container>
+
+    <ng-template #nothing>
+        <p>No ToDo available for moment...</p>
+    </ng-template>
+</div>
